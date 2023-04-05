@@ -1,8 +1,9 @@
-const loadPhone = async(search) => {
+const loadPhone = (search) => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${search}`
-    const res = await fetch(url);
-    const data = await res.json();
-    displayPhones(data.data);
+    fetch(url)
+    .then(res => res.json())
+     .then(data => displayPhones(data.data));
+    
 }
 const displayPhones = phones => {
     // console.log(phones)
